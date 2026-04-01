@@ -54,6 +54,49 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
 
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+        }
+
+        .project-link svg {
+            width: 1rem;
+            height: 1rem;
+            margin-right: 0.5rem;
+        }
+
+        .project-link--app {
+            background: #111827;
+            color: #ffffff;
+        }
+
+        .project-link--app:hover {
+            background: #1f2937;
+        }
+
+        .project-link--play {
+            background: #16a34a;
+            color: #ffffff;
+        }
+
+        .project-link--play:hover {
+            background: #15803d;
+        }
+
+        .project-link--web {
+            background: #2563eb;
+            color: #ffffff;
+        }
+
+        .project-link--web:hover {
+            background: #1d4ed8;
+        }
+
         ::-webkit-scrollbar {
             width: 6px;
         }
@@ -136,7 +179,7 @@
     <main class="pt-16">
 
         <!-- Home Section -->
-        <section x-show="section === 'home'" x-transition class="h-screen flex">
+        <section x-show="section === 'home'" x-transition class="h-[calc(100svh-4rem)] flex overflow-hidden">
             <div class="w-full md:w-1/2 flex items-center px-4 sm:px-6 lg:px-16">
                 <div class="max-w-2xl">
                     <p class="text-xl md:text-2xl text-primary-500 font-semibold mb-4">Hello, I'm</p>
@@ -155,8 +198,9 @@
                     </div>
                 </div>
             </div>
-            <div class="hidden md:block md:w-1/2 h-full relative overflow-hidden">
-                <img src="images/photo.png" alt="John Paul Soriano" class="absolute inset-0 w-full h-full object-cover">
+            <div class="hidden md:block md:w-1/2 h-full relative overflow-hidden bg-gray-50">
+                <img src="images/photo.png" alt="John Paul Soriano"
+                    class="absolute inset-0 w-full h-full object-contain object-top">
             </div>
         </section>
 
@@ -212,11 +256,33 @@
                     <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 card-hover">
                         <div class="flex justify-between items-start mb-4">
                             <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Expense Diary</h3>
+                                <p class="text-primary-500 text-sm font-medium">Expense Tracker</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            An expense tracking app for logging daily spending and managing personal budgets.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://apps.apple.com/us/app/expense-diary-expense-tracker/id6760805756"
+                                target="_blank"
+                                class="project-link project-link--app">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                                </svg>
+                                App Store
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 card-hover">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
                                 <h3 class="text-2xl font-bold text-gray-900 mb-2">STEP LMS</h3>
                                 <p class="text-primary-500 text-sm font-medium">Learning Management System</p>
                             </div>
-                            <span
-                                class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Active</span>
                         </div>
                         <p class="text-gray-600 mb-6">
                             Custom LMS used by 15,000+ Students of Universidad de Dagupan. Features real-time grades,
@@ -224,7 +290,7 @@
                         </p>
                         <div class="flex flex-wrap gap-3">
                             <a href="http://udd.steps.com.ph/login" target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
+                                class="project-link project-link--web">
                                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
@@ -234,25 +300,25 @@
                             </a>
                             <a href="https://play.google.com/store/apps/details?id=com.arzatech.step&hl=en"
                                 target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
+                                class="project-link project-link--play">
                                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                     <path
                                         d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z" />
                                 </svg>
-                                Android
+                                Play Store
                             </a>
                             <a href="https://apps.apple.com/ph/app/step-s/id6469019994" target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
+                                class="project-link project-link--app">
                                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                     <path
                                         d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
                                 </svg>
-                                iOS
+                                App Store
                             </a>
                         </div>
                     </div>
 
-                    <!-- Project 2 -->
+                    <!-- Project 3 -->
                     <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 card-hover">
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">UdD Student Portal</h3>
                         <p class="text-primary-500 text-sm font-medium mb-4">Academic Services Portal</p>
@@ -261,7 +327,7 @@
                         </p>
                         <div class="flex flex-wrap gap-3">
                             <a href="https://portal.udd.edu.ph" target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
+                                class="project-link project-link--web">
                                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
@@ -271,25 +337,25 @@
                             </a>
                             <a href="https://play.google.com/store/apps/details?id=com.arzatech.myuddportal&hl=en"
                                 target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
+                                class="project-link project-link--play">
                                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                     <path
                                         d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z" />
                                 </svg>
-                                Android
+                                Play Store
                             </a>
                             <a href="https://apps.apple.com/ph/app/myuddportal/id6747736747" target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
+                                class="project-link project-link--app">
                                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                     <path
                                         d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
                                 </svg>
-                                iOS
+                                App Store
                             </a>
                         </div>
                     </div>
 
-                    <!-- Project 3 -->
+                    <!-- Project 4 -->
                     <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 card-hover">
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">ISUdD Attendance Monitoring</h3>
                         <p class="text-gray-600 mb-6">
@@ -298,25 +364,25 @@
                         <div class="flex flex-wrap gap-3">
                             <a href="https://play.google.com/store/apps/details?id=com.arzatech.isuddattendance&hl=en"
                                 target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
+                                class="project-link project-link--play">
                                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                     <path
                                         d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z" />
                                 </svg>
-                                Android
+                                Play Store
                             </a>
                             <a href="https://apps.apple.com/ph/app/isudd-attendance/id6748982146" target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
+                                class="project-link project-link--app">
                                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
                                     <path
                                         d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
                                 </svg>
-                                iOS
+                                App Store
                             </a>
                         </div>
                     </div>
 
-                    <!-- Project 4 -->
+                    <!-- Project 5 -->
                     <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 card-hover">
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">Universidad de Dagupan Website</h3>
                         <p class="text-gray-600 mb-6">
@@ -324,7 +390,7 @@
                         </p>
                         <div class="flex flex-wrap gap-3">
                             <a href="https://udd.edu.ph" target="_blank"
-                                class="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm">
+                                class="project-link project-link--web">
                                 <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
@@ -335,16 +401,27 @@
                         </div>
                     </div>
 
-                    <!-- Project 5 -->
+                    <!-- Project 6 -->
                     <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 card-hover">
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">Queuing System</h3>
                         <p class="text-gray-600">
                             A digital system designed to manage and streamline student queues for academic and
                             administrative services.
                         </p>
+                        <div class="flex flex-wrap gap-3 mt-6">
+                            <a href="https://queuing.udd.edu.ph/" target="_blank"
+                                class="project-link project-link--web">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
+                                    </path>
+                                </svg>
+                                Web
+                            </a>
+                        </div>
                     </div>
 
-                    <!-- Project 6 -->
+                    <!-- Project 7 -->
                     <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 card-hover">
                         <h3 class="text-2xl font-bold text-gray-900 mb-2">QR Code Contact Tracing</h3>
                         <p class="text-gray-600">
